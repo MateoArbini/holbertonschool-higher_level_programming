@@ -13,10 +13,13 @@ int check_cycle(listint_t *head)
 		return (0);
 	while (aux2)
 	{
-		aux1 = aux1->next;
-		aux2 = aux2->next->next;
-		if (aux1 == aux2)
-			return (1);
+		if (aux2->next != NULL && aux2->next->next != NULL)
+		{
+			aux1 = aux1->next;
+			aux2 = aux2->next->next;
+			if (aux1 == aux2)
+				return (1);
+		}
 	}
 	return (0);
 }
