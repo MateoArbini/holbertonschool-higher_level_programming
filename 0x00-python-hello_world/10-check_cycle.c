@@ -11,15 +11,16 @@ int check_cycle(listint_t *head)
 
 	if (!head)
 		return (0);
-	while (aux2)
+	while (1)
 	{
 		if (aux2->next != NULL && aux2->next->next != NULL)
 		{
 			aux1 = aux1->next;
 			aux2 = aux2->next->next;
-			if (aux1 == aux2)
+			if (aux2 == aux1)
 				return (1);
 		}
+		else
+			return (0);
 	}
-	return (0);
 }
