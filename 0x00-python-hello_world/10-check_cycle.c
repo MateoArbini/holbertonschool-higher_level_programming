@@ -9,6 +9,8 @@ int check_cycle(listint_t *head)
 	listint_t *aux1 = head;
 	listint_t *aux2 = head;
 
+	if (!head)
+		return (0);
 	while (aux2)
 	{
 		aux1 = aux1->next;
