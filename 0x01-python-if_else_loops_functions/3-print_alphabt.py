@@ -2,4 +2,4 @@
 for letter in range(97, 123):
     if (letter == 113 or letter == 101):
         continue
-    print("{}".format(chr(letter)), end='')
+    print(f"{(chr(letter))}", end='')
