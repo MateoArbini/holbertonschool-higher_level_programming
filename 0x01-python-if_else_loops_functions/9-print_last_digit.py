@@ -11,5 +11,5 @@ def print_last_digit(number):
         print(ln, end='')
     else:
         ln = 0
-        print(ln, end='') 
+        print(ln, end='')
     return(ln)
