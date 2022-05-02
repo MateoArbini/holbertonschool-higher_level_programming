@@ -3,11 +3,11 @@ def add_tuple(tuple_a=(), tuple_b=()):
     tuple_c = ()
     length_a = len(tuple_a)
     length_b = len(tuple_b)
-    if(length_a < 2 and length_a != 0):
+    if(length_a < 2):
         while length_a < 2:
             tuple_a = tuple_a + (0, )
             length_a += 1
-    elif(length_b < 2 and length_b != 0):
+    elif(length_b < 2):
         while length_b < 2:
             tuple_b = tuple_b + (0, )
             length_b += 1
