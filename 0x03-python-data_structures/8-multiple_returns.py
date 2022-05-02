@@ -6,8 +6,6 @@ def multiple_returns(sentence):
     if(length == 0):
         return 0, None
     else:
-        added_value_tuple = (length,)
-        added_value_tuple2 = (first,)
-        tuple_a = (tuple_a + added_value_tuple + added_value_tuple2)
+        tuple_a = (length, first)
 
     return tuple_a
