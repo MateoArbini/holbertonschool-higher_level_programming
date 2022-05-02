@@ -5,7 +5,7 @@ def print_matrix_integer(matrix=[[]]):
         count = 0
         for j in i:
             print(j, end='')
-            if count < length - 1:
+            if count <= length - 1:
                 print(" ", end='')
                 count += 1
         print("$")
