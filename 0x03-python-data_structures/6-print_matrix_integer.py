@@ -4,5 +4,5 @@ def print_matrix_integer(matrix=[[]]):
     if(type(a) == type(matrix)):
         for i in matrix:
             for j in i:
-                print(f"{j:d}", end=' ')
+                print(f"{j:d} ", end='')
             print('', end='\n')
