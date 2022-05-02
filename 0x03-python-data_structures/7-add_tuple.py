@@ -7,12 +7,12 @@ def add_tuple(tuple_a=(), tuple_b=()):
         while length_a < 2:
             tuple_a = tuple_a + (0, )
             length_a += 1
-    elif(length_b < 2):
+    elif(length_a == 0):
+        tuple_a = tuple_a + (0, 0)
+    if(length_b < 2):
         while length_b < 2:
             tuple_b = tuple_b + (0, )
             length_b += 1
-    elif(length_a == 0):
-        tuple_a = tuple_a + (0, 0)
     elif(length_b == 0):
         tuple_b = tuple_b + (0, 0)
 
