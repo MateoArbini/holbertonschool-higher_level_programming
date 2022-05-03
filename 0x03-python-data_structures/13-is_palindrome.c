@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 		temp = temp->next;
 	}
 
-	for (i = 0, len; i < len; i++, len--)
+	for (i = 0; i < len; i++, len--)
 	{
 		if (array[len] != array[i])
 		{
@@ -36,5 +36,4 @@ int is_palindrome(listint_t **head)
 		}
 	}
 	return (1);
-}	
-
+}
