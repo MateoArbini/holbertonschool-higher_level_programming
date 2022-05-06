@@ -5,7 +5,7 @@ def weight_average(my_list=[]):
     result_div = 0
     average = 0
     if len(my_list) == 0:
-            return 1
+        return 1
     for tupla in my_list:
         result_mul = tupla[0] * tupla[1]
         result_sum += result_mul
