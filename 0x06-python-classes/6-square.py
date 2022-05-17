@@ -16,15 +16,7 @@ class Square:
         this attribute is private, it is because the size of a square is
         crucial for a square and many things depend on it. So we need to take
         the control of it and keep it privately.'''
-        if type(size) is int:
-            self.__size = size
-        else:
-            raise TypeError("size must be an integer")
-        if size >= 0:
-            self.__size = size
-        else:
-            raise ValueError("size must be >= 0")
-
+        self.size = size
         self.position = position
 
     def area(self):
@@ -47,7 +39,7 @@ class Square:
         if value >= 0:
             self.__size = value
         else:
-            raise ValueError("size must be >= 0") 
+            raise ValueError("size must be >= 0")
 
     @property
     def position(self):
