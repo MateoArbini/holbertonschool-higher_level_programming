@@ -2,6 +2,8 @@
 '''function that creates a class named "Square", which is defined by
 a private instance attribute called "size", and instantiation with
 "size" (no type/value verification'''
+
+
 class Square:
     '''Here we create a new class named "Square"'''
     def __init__(self, __size):
@@ -12,4 +14,3 @@ class Square:
         crucial for a square and many things depend on it. So we need to take
         the control of it and keep it privately.'''
         self.__size = __size
-
