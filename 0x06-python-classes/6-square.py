@@ -59,16 +59,12 @@ class Square:
             self.__position = value
 
     def my_print(self):
-        '''Prints in stdout the square with the character #'''
+        '''function that prints a square'''
         if self.__size == 0:
-            print("")
-        else:
-            if self.__position[1] > 0:
-                for pos in range(self.__position[1]):
-                    print("")
-            for row in range(self.__size):
-                for column_pos2 in range(self.__position[0]):
-                    print(" ", end="")
-                for column in range(self.__size):
-                    print("#", end="")
-                print()
+            print()
+        if self.position:
+            if self.__size > 0:
+                print("\n" * self.__position[1], end="")
+                for a in range(self.size):
+                    print(" " * self.__position[0], end="")
+                    print("#" * self.__size) 
