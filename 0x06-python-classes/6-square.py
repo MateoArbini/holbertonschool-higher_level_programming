@@ -61,7 +61,7 @@ class Square:
     def my_print(self):
         '''function that prints a square'''
         if self.__size == 0:
-            print()
+            print("")
         if self.__position:
             if self.__size > 0:
                 print("\n" * self.__position[1], end="")
