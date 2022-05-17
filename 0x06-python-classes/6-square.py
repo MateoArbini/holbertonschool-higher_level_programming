@@ -50,9 +50,10 @@ class Square:
         if type(size) is not tuple or len(size) != 2 or \
                 type(size[0]) is not int or type(size[1]) is not int or \
                 size[0] < 0 or size[1] < 0:
-                    raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError("position must be a tuple of 2 positive \
+                        integers")
         else:
-            self.__position = size 
+            self.__position = size
 
     def my_print(self):
         '''Prints a square with the character #'''
