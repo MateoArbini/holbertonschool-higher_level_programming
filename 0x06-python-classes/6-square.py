@@ -59,14 +59,10 @@ class Square:
     def my_print(self):
         '''Prints a square with the character #'''
         if self.__size == 0:
-            print("")
+            print()
         else:
             if self.__position[1] > 0:
-                for pos in range(self.__position[1]):
-                    print("")
-            for row in range(self.__size):
-                for column_pos2 in range(self.__position[0]):
-                    print(" ", end="")
-                for column in range(self.__size):
-                    print("#", end="")
-                print()
+                for i in range(self.__position[1]):
+                    print()
+            for x in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
