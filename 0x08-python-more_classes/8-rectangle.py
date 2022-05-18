@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 '''function that creates a class named "Recatangle'''
 
+
 class Rectangle:
     '''Here we create the class'''
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
@@ -14,7 +16,7 @@ class Rectangle:
     def width(self):
         '''private instance attribute named width'''
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         '''setter of the private instance width'''
@@ -86,9 +88,9 @@ class Rectangle:
         area1 = rect_1.area()
         area2 = rect_2.area()
 
-        if object1 == False:
+        if object1 is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
-        elif object2 == False:
+        elif object2 is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
         else:
             if area1 == area2:
