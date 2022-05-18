@@ -60,18 +60,18 @@ class Rectangle:
         string = ""
         symbol = str(self.print_symbol)
         if self.__height <= 0 or self.__width <= 0:
-            return empt_string
-        else:
-            for hei in range(self.__height):
-                for wid in range(self.__width):
-                    string = string + symbol
-                string = string + '\n'
-            string = string[:-1]
+            return string
+
+        for hei in range(self.__height):
+            for wid in range(self.__width):
+                string = string + symbol
+            string = string + '\n'
+        string = string[:-1]
         return string
 
     def __repr__(self):
         '''method to return a string representation of the object'''
-        return f"Rectangle({self.__width},{self.__height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         '''method to return a message when an instance is deleted'''
@@ -85,17 +85,13 @@ class Rectangle:
         '''staticmethod that returns the biggest rectangle based on the area'''
         object1 = isinstance(rect_1, Rectangle)
         object2 = isinstance(rect_2, Rectangle)
-        area1 = rect_1.area()
-        area2 = rect_2.area()
 
         if object1 is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif object2 is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
         else:
-            if area1 == area2:
-                return rect_1
-            elif area1 > area2:
+            if rect_1.area() >= rect_2.area():
                 return rect_1
             else:
                 return rect_2
