@@ -53,7 +53,7 @@ class Rectangle:
 
     def __str__(self):
         '''function to print the rectangle'''
-        if self.__height = 0 or self.__width = 0:
+        if self.__height == 0 or self.__width == 0:
             return empt_string
 
         string = ""
