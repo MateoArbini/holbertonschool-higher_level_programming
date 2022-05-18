@@ -92,7 +92,7 @@ class Rectangle:
         elif object2 is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
 
-        if area1 >= area2
+        if area1 >= area2:
             return area1
         else:
             return area2
