@@ -5,8 +5,8 @@
 class Rectangle:
     '''Here we create the class'''
     def __init__(self, width=0, height=0):
-        self.height = height
-        self.width = width
+        self.__height = height
+        self.__width = width
 
     @property
     def width(self):
@@ -56,10 +56,10 @@ class Rectangle:
         string = ""
         if self.__height <= 0 or self.__width <= 0:
             return empt_string
-        else:
-            for hei in range(self.__height):
-                for wid in range(self.__width):
-                    string = string + '#'
-                string = string + '\n'
-            string = string[:-1]
+
+        for hei in range(self.__height):
+            for wid in range(self.__width):
+                string = string + '#'
+            string = string + '\n'
+        string = string[:-1]
         return string
