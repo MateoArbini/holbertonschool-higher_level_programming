@@ -60,18 +60,17 @@ class Rectangle:
         string = ""
         symbol = str(self.print_symbol)
         if self.__height <= 0 or self.__width <= 0:
-            return empt_string
-        else:
-            for hei in range(self.__height):
-                for wid in range(self.__width):
-                    string = string + symbol
-                string = string + '\n'
-            string = string[:-1]
+            return string
+        for hei in range(self.__height):
+            for wid in range(self.__width):
+                string = string + symbol
+            string = string + '\n'
+        string = string[:-1]
         return string
 
     def __repr__(self):
         '''method to return a string representation of the object'''
-        return f"Rectangle({self.__width},{self.__height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         '''method to return a message when an instance is deleted'''
