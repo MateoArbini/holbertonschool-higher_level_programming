@@ -74,7 +74,6 @@ class Rectangle:
 
     def __del__(self):
         '''method to return a message when an instance is deleted'''
-        del self
         if Rectangle.number_of_instances > 0:
             Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
@@ -82,19 +81,12 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''staticmethod that returns the biggest rectangle based on the area'''
-        object1 = isinstance(rect_1, Rectangle)
-        object2 = isinstance(rect_2, Rectangle)
-        area1 = rect_1.area()
-        area2 = rect_2.area()
-
         if object1 is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif object2 is False:
             raise TypeError("rect_2 must be an instance of Rectangle")
+
+        if rect_1.area() >= rect_2.area():
+            return rect_1
         else:
-            if area1 == area2:
-                return rect_1
-            elif area1 > area2:
-                return rect_1
-            else:
-                return rect_2
+            return rect_2
