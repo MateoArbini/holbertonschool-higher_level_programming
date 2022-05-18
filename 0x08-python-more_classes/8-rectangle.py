@@ -8,8 +8,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
 
     @property
@@ -74,6 +74,7 @@ class Rectangle:
 
     def __del__(self):
         '''method to return a message when an instance is deleted'''
+        del self
         if Rectangle.number_of_instances > 0:
             Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
@@ -81,6 +82,9 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         '''staticmethod that returns the biggest rectangle based on the area'''
+        object1 = isinstance(rect_1, Rectangle)
+        object2 = isinstance(rect_2, Rectangle)
+
         if object1 is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif object2 is False:
