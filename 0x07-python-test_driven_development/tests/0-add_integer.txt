@@ -1,0 +1,79 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Testing cases where the function should work normally:
+
+	>>> add_integer(5, 5)
+	10
+
+	>>> add_integer(7, -1)
+	6
+	
+	>>> add_integer(0, -10)
+	-10
+
+	>>> add_integer(-10, -10)
+	-20
+	
+	>>> add_integer(-10, 5)
+	-5
+
+	>>> add_integer(5.5, 5)
+	10
+
+Testing cases when passing a variable which is not int or float:
+
+	>>> add_integer("hola")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer({"hola"}, -4)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer(("6"), 8)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer([5], 9)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Testing cases where float variables are given to the function:
+
+	>>> add_integer(3, 9.8)
+	12
+
+	>>> add_integer(-5.5, -5.5)
+	-10
+
+Testing case when the user only gives one argument to the function:
+
+	>>> add_integer(4)
+	102
+
+	>>> add_integer(0)
+	98
+
+	>>> add_integer(-1)
+	97
+
+	>>> add_integer(1.83469256)
+	99
+
+Testing case when more than two variables were passed:
+
+	>>> add_integer(2, 3, 4)
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+	
+Testing cases when no argumentw were passed:
+
+	>>> add_integer( , )
+	Traceback (most recent call last):
+	...
+	SyntaxError: invalid syntax
