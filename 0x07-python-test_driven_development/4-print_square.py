@@ -3,6 +3,7 @@
 function that prints a square with the char #
 '''
 
+
 def print_square(size):
     '''function'''
     if type(size) is not int:
@@ -12,5 +13,5 @@ def print_square(size):
 
     for i in range(size):
         for i in range(size):
-            print('#', end = '')
+            print('#', end='')
         print()
