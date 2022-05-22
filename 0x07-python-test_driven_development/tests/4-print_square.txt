@@ -1,0 +1,67 @@
+>>> print_square = __import__('4-print_square').print_square
+
+Testing cases where the function should work correctly:
+
+	>>> print_square(5)
+        #####
+	#####
+	#####
+	#####
+	#####
+
+Testing cases where 0 is passed to the function
+
+	>>> print_square(0)
+
+Testing case where the argument passed is not an int:
+
+	>>> print_square("School")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square({4})
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square(["school"])
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square(7.9)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+Testing cases where more than one argument is passed to the function:
+
+	>>> print_square(4, 4)
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() takes 1 positional argument but 2 were given
+
+Testing case where no argument was passed to the function:
+
+	>>> print_square( )
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() missing 1 required positional argument: 'size'
+
+Testing case where a negative number is passed:
+
+	>>> print_square(-50)
+        Traceback (most recent call last):
+        ...
+        ValueError: size must be >= 0
