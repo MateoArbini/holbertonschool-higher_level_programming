@@ -1,0 +1,78 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing cases where the function should work without a problem:
+
+	>>> say_my_name("Mateo", "Arbini")
+	My name is Mateo Arbini
+
+	>>> say_my_name("Jorge", "Perez")
+	My name is Jorge Perez
+
+	>>> say_my_name("Mateo")
+	My name is Mateo 
+
+	>>> say_my_name("Jorge")
+	My name is Jorge 
+
+Testing cases where no argument name was passed:
+
+	>>> say_my_name( , "Arbini")
+	Traceback (most recent call last):
+	...
+	SyntaxError: invalid syntax
+
+	>>> say_my_name((5) , "Arbini")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name({"hello"}, "Arbini")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name(None, "Arbini")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Testing cases where arguments are not strings:
+
+	>>> say_my_name(None, 123)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+	>>> say_my_name(4)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Testing case where no arguments were passed:
+
+	>>> say_my_name()
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+	>>> say_my_name(3, {"Hello"}, "School")
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+	>>> say_my_name(None, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Testing cases where last name was not a string:
+
+	>>> say_my_name("Mateo", 123)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+	>>> say_my_name("Mateo", {"Hi"})
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
