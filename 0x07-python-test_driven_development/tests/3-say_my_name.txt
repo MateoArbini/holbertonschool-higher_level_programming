@@ -14,6 +14,9 @@ Testing cases where the function should work without a problem:
 	>>> say_my_name("Jorge")
 	My name is Jorge 
 
+	>>> say_my_name("", "Arbini")
+	My name is  Arbini
+
 Testing cases where no argument name was passed:
 
 	>>> say_my_name( , "Arbini")
