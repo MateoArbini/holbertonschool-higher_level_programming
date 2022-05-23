@@ -101,6 +101,11 @@ Testing cases where div does not match with the requirements:
         ...
         TypeError: div must be a number
 
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], [6])
+        Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
 Testing cases where an extra argument is passed:
 
 	>>> matrix_divided([[4, 2], [2, 5]], "School", 22)
@@ -120,4 +125,4 @@ Testing cases were no arguments were passed:
 	>>> matrix_divided( , )
         Traceback (most recent call last):
         ...
-        SyntaxError: invalid syntax		
+        SyntaxError: invalid syntax
