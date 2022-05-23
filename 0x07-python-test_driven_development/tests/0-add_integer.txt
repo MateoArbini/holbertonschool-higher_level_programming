@@ -77,3 +77,8 @@ Testing cases when no argumentw were passed:
 	Traceback (most recent call last):
 	...
 	SyntaxError: invalid syntax
+
+	>>> add_integer(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
