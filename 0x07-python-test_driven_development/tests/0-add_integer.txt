@@ -71,7 +71,7 @@ Testing case when more than two variables were passed:
 	...
 	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 	
-Testing cases when no argumentw were passed:
+Testing cases when no arguments were passed:
 
 	>>> add_integer( , )
 	Traceback (most recent call last):
