@@ -20,6 +20,26 @@ Testing case where the argument passed is not an int:
 	...
 	TypeError: size must be an integer
 
+	>>> print_square("Holberton.School")
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square("Holberton.School?How are you: John")
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square(" ")
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square("")
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
 	>>> print_square({"hola", "como", "estas"})
         Traceback (most recent call last):
         ...
