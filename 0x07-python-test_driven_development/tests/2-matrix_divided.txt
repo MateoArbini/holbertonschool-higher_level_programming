@@ -109,7 +109,7 @@ Testing cases where div does not match with the requirements:
 	>>> matrix_divided([[3]], 6)
         Traceback (most recent call last):
         ...
-        IndexError: list index out of range
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 Testing cases where an extra argument is passed:
 
