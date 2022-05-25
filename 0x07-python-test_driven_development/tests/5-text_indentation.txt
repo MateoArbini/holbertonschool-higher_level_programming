@@ -27,6 +27,29 @@ Testing case when the argument passed is not a string:
         ...
         TypeError: text must be a string
 
+	>>> text_indentation("This. is. a: test? Nope, or yep")
+	This.
+    	<BLANKLINE>
+    	is.
+	<BLANKLINE>
+	a:
+	<BLANKLINE>
+	test?
+	<BLANKLINE>
+	Nope, or yep	
+
+	>>> text_indentation("   Test     \n     ?     ")
+	Test     
+             ?
+        <BLANKLINE>
+
+	>>> text_indentation(" ")
+
+	>>> text_indentation()
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
 Testing case when no argument is passed to the function:
 
 	>>> text_indentation()
