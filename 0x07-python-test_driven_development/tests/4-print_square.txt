@@ -20,7 +20,12 @@ Testing case where the argument passed is not an int:
 	...
 	TypeError: size must be an integer
 
-	>>> print_square({4})
+	>>> print_square({"hola", "como", "estas"})
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	>>> print_square(("Hola", "como", "estas"))
         Traceback (most recent call last):
         ...
         TypeError: size must be an integer
@@ -54,7 +59,7 @@ Testing cases where more than one argument is passed to the function:
 
 Testing case where no argument was passed to the function:
 
-	>>> print_square( )
+	>>> print_square()
         Traceback (most recent call last):
         ...
         TypeError: print_square() missing 1 required positional argument: 'size'
