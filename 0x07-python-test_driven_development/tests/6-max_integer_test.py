@@ -20,6 +20,7 @@ class TestMaxInteger(unittest.TestCase):
         a value of 5 and it is inserted into the list'''
         x = 10
         self.assertEqual(max_integer([1, 2, 3, 10]), 10)
+        self.assertEqual(max_integer([1, 3, 2], 3)
     
     if __name__ == "__main__":
         unittest.main()
