@@ -98,3 +98,9 @@ True
 >>> issubclass(MyList, list)
 True
 
+>>> my_list.append(-1)
+>>> my_list.append(-4)
+>>> my_list += [-8]
+>>> my_list.append(-5)
+>>> my_list.print_sorted()
+[-8, -5, -4, -1, 1, 2, 3, 4, 5]
