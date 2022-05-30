@@ -21,5 +21,5 @@ class Square(Rectangle):
 
     def __str__(self):
         '''function that return a string'''
-        return (f"[{type(self).__name__}] {self.__size}/{self.__size}")
+        return (f"[{self.__class__.__name__}] {self.__size}/{self.__size}")
 
