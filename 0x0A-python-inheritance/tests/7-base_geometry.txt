@@ -136,24 +136,8 @@ Traceback (most recent call last):
 ...
 TypeError: name must be an integer
 
->>> bg.integer_validator("name", True)
-Traceback (most recent call last):
-...
-TypeError: name must be an integer
-
->>> bg.integer_validator("Test", [3])
-Traceback (most recent call last):
-...
-TypeError: Test must be an integer
-
 >>> bg.integer_validator("Test", (4, ))
 Traceback (most recent call last):
 ...
 TypeError: Test must be an integer
-
->>> bg.integer_validator("Test", {3, 4})
-Traceback (most recent call last):
-...
-TypeError: Test must be an integer
-
 
