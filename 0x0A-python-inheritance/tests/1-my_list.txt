@@ -66,5 +66,20 @@ False
 True
 
 Testing case of Type()
+
 >>> type(MyList())
 <class '1-my_list.MyList'>
+
+>>> type(my_list) == MyList
+True
+
+>>> print(my_list)
+[]
+
+>>> l2 = MyList(my_list)
+>>> l2 = [3, 7, 0, 1, 6]
+>>> l2.print_sorted()
+Traceback (most recent call last):
+...
+AttributeError: 'list' object has no attribute 'print_sorted'
+
