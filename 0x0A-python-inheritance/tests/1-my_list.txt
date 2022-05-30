@@ -1,0 +1,45 @@
+>>> MyList = __import__('1-my_list').my_list
+
+Testing cases where the function should work ok
+
+>>> my_list = MyList()
+>>> my_list.append(100)
+>>> my_list.append(10)
+>>> my_list.append(1)
+>>> my_list.append(1000)
+>>> print(my_list)
+[100, 10, 1, 1000]
+>>> my_list.print_sorted()
+[1, 10, 100, 1000]
+
+Testing case None
+
+>>> my_list = MyList()
+>>> my_list.append(None)
+>>> my_list.print.sorted()
+[None]
+
+Testing case when theres only one element
+
+>>> my_list = MyList()
+>>> my_list.append(100)
+>>> print(my_list)
+[100]
+
+Testing case when the list is empty
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+Testing isinstance, issubclass
+
+>>> my_list = MyList()
+>>> isinstance(my_list, object)
+True
+
+>>> isinstance(MyList, list)
+False
+
+>>> issubclass(MyList, object)
+True
