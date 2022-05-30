@@ -99,5 +99,6 @@ True
 >>> 'integer_validator' in dir(BaseGeometry)
 True
 
+>>> bg = BaseGeometry()
 >>> dir(bg) == dir(BaseGeometry)
 True
