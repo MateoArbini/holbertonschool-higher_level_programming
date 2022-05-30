@@ -1,4 +1,4 @@
->>> MyList = __import__('1-my_list').my_list
+>>> MyList = __import__('1-my_list').MyList
 
 Testing cases where the function should work ok
 
@@ -16,7 +16,7 @@ Testing case None
 
 >>> my_list = MyList()
 >>> my_list.append(None)
->>> my_list.print.sorted()
+>>> my_list.print_sorted()
 [None]
 
 Testing case when theres only one element
