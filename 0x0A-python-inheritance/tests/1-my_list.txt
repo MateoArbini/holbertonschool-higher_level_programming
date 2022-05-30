@@ -12,6 +12,27 @@ Testing cases where the function should work ok
 >>> my_list.print_sorted()
 [1, 10, 100, 1000]
 
+>>> my_list = MyList()
+>>> my_list.append(100)
+>>> my_list.append(10)
+>>> my_list.append(-1)
+>>> my_list.append(1000)
+>>> print(my_list)
+[100, 10, -1, 1000]
+>>> my_list.print_sorted()
+[-1, 10, 100, 1000]
+
+>>> my_list = MyList()
+>>> my_list.append(100)
+>>> my_list.append(10)
+>>> my_list.append(-1)
+>>> my_list.append(1000)
+>>> print(my_list)
+[100, 10, -1, 1000]
+>>> id(my_list) is not id(my_list.print_sorted())
+[-1, 10, 100, 1000]
+True
+
 Testing case None
 
 >>> my_list = MyList()
@@ -43,3 +64,7 @@ False
 
 >>> issubclass(MyList, object)
 True
+
+Testing case of Type()
+>>> type(MyList())
+<class '1-my_list.MyList'>
