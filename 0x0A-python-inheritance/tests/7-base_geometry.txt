@@ -1,0 +1,94 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Testing cases where the function should work ok
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", 100)
+
+Testing case where the area function is not implemented
+
+>>> example = BaseGeometry()
+>>> example.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+Testing case where the number is below 0
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", -1)
+Traceback (most recent call last):
+...
+ValueError: Holberton must be greater than 0
+
+Testing case where the number is 0
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", 0)
+Traceback (most recent call last):
+...
+ValueError: Holberton must be greater than 0
+
+Testing case where value is None
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", None)
+Traceback (most recent call last):
+...
+TypeError: Holberton must be an integer
+
+Testing case where the value is a string
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", "School")
+Traceback (most recent call last):
+...
+TypeError: Holberton must be an integer
+
+Testing case where the value is a list
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", ["School"])
+Traceback (most recent call last):
+...
+TypeError: Holberton must be an integer
+
+Testing case where the value is a tuple
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", {"School"})
+Traceback (most recent call last):
+...
+TypeError: Holberton must be an integer
+
+Testing case where the value is a dict
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", {"key": "School"})
+Traceback (most recent call last):
+...
+TypeError: Holberton must be an integer
+
+Testing case where there are not two arguments
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Testing case where one of the arguments is type boolean
+
+>>> example = BaseGeometry()
+>>> example.integer_validator("Holberton", True)
+Traceback (most recent call last):
+...
+TypeError: Holberton must be an integer
+
+Testing case where there are no arguments
+
+>>> example = BaseGeometry()
+>>> example.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
