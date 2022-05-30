@@ -5,8 +5,6 @@ called def integer_validator(self, name, value):'''
 
 class BaseGeometry:
     '''class'''
-    def __init__(self):
-        '''initializing the class basegeometry'''
 
     def area(self):
         '''public instance method not implemented'''
