@@ -7,9 +7,6 @@ sorted (ascending sort).
 
 class MyList(list):
     '''class'''
-    def __init__(self):
-        '''initializing class'''
-        pass
 
     def print_sorted(self):
         '''function to print the list sorted'''
