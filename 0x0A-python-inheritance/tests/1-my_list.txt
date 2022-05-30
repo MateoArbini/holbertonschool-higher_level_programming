@@ -87,7 +87,7 @@ AttributeError: 'list' object has no attribute 'print_sorted'
 []
 
 >>> my_list
-[1, 4, 2, 3, 5]
+[]
 
 >>> isinstance(my_list, MyList)
 True
