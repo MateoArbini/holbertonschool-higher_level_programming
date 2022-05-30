@@ -9,7 +9,6 @@ class BaseGeometry:
     '''class'''
     def __init__(self):
         '''initializing the class basegeometry'''
-        pass
 
     def area(self):
         raise Exception("area() is not implemented")
