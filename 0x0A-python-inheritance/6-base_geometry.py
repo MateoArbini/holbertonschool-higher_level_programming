@@ -11,4 +11,5 @@ class BaseGeometry:
         '''initializing the class basegeometry'''
 
     def area(self):
+        '''public instance mehtod not implemented'''
         raise Exception("area() is not implemented")
