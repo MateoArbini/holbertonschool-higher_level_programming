@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import json
 '''
 Write a function that creates an Object from a “JSON file”:
 
@@ -9,6 +8,9 @@ Write a function that creates an Object from a “JSON file”:
     represent an object.
     You don’t need to manage file permissions / exceptions.
 '''
+
+
+import json
 
 
 def load_from_json_file(filename):
