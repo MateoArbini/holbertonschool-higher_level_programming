@@ -93,10 +93,15 @@ class Rectangle(Base):
 
     def display(self):
         '''function that display the rectangle instance with the char #'''
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print('#', end='')
+        if self.__height == 0 or self.__width == 0:
             print()
+        else:
+            if self.__y >= 1:
+                for i in range(self.__y):
+                    print()
+            for f in range(self.__height):
+                print(' ' * self.__x + '#' * self.__width)
+
 
     def __str__(self):
         '''method that returns a string'''
