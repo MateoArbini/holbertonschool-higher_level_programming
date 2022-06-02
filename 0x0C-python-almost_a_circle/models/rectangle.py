@@ -102,7 +102,6 @@ class Rectangle(Base):
             for f in range(self.__height):
                 print(' ' * self.__x + '#' * self.__width)
 
-
     def __str__(self):
         '''method that returns a string'''
         return (f"[{self.__class__.__name__}] ({self.id}) \
