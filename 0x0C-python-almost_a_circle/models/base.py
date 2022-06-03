@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 '''
 Write the first class Base:
 
@@ -36,9 +37,24 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         '''returns the JSON string representation of list_dictionaries'''
-        if list_dictionaries is None or len(list_dictionaries):
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return str(json.dumps(list_dictionaries))
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        '''write a json string representation to file'''
+        filename = f"{cls.__name__}.json"
+        empty_list = []
+
+        if list_objs is not None:
+            for element in list_objs:
+                empty_list = empty_list + [element.to_dictionary()]
+        else:
+            json_list = Base.to_json_string(empty_list)
+            with open(filename, "w", encoding="utf-8") as j:
+                j.write(json_list)
