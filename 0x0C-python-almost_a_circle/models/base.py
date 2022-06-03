@@ -62,10 +62,14 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         '''returnt the list of the json string representation'''
-        empty_list = []
-
         if json_string is None or len(json_string) == 0:
-            return dict(json.loads(json_string))
+            json_string = []
+            return json.loads(json_string)
         else:
             a = json.loads(json_string)
             return a
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''return an instance with all attributes already set'''
+
