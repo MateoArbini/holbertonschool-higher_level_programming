@@ -21,7 +21,7 @@ Write the first class Base:
     to avoid duplicating the same code (by extension, same bugs).
 '''
 
-
+from os import path
 import json
 
 
@@ -54,10 +54,10 @@ class Base:
         if list_objs is not None:
             for element in list_objs:
                 empty_list = empty_list + [element.to_dictionary()]
-        else:
-            json_list = Base.to_json_string(empty_list)
-            with open(filename, "w", encoding="utf-8") as j:
-                j.write(json_list)
+
+        json_list = Base.to_json_string(empty_list)
+        with open(filename, "w", encoding="utf-8") as j:
+            j.write(json_list)
 
     @staticmethod
     def from_json_string(json_string):
@@ -85,25 +85,12 @@ class Base:
     def load_from_file(cls):
         '''returns a list of instances'''
         filename = f"{cls.__name__}.json"
-        empty_list = []
+        instances = []
 
-        with open(filename, "r", encoding="utf-8")as f:
-            read_file = f.read()
-            if cls.__name__ == "Square":
-                dictionary = {
-                        "id": int,
-                        "size": int,
-                        "x": int,
-                        "y": int,
-                        }
-            else:
-                dictionary = {
-                        "id": int,
-                        "width": int,
-                        "height": int,
-                        "x": int,
-                        "y": int,
-                        }
-            create_dictionary = cls.create(**dictionary)
-            empty_list.append(create_dictionary)
-        return empty_list
+        with open(filename, "r", encoding="UTF-8") as f:
+            if path.exists(filename) is False:
+                return instances
+            elements = cls.from_json_string(f.read())
+            for element in elements:
+                instances.append(cls.create(**element))
+        return instances 
