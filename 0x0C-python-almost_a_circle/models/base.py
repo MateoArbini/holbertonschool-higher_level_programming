@@ -80,3 +80,30 @@ class Base:
         attr.update(**dictionary)
 
         return attr
+
+    @classmethod
+    def load_from_file(cls):
+        '''returns a list of instances'''
+        filename = f"{cls.__name__}.json"
+        empty_list = []
+
+        with open(filename, "r", encoding="utf-8")as f:
+            read_file = f.read()
+            if cls.__name__ == "Square":
+                dictionary = {
+                        "id": int,
+                        "size": int,
+                        "x": int,
+                        "y": int,
+                        }
+            else:
+                dictionary = {
+                        "id": int,
+                        "width": int,
+                        "height": int,
+                        "x": int,
+                        "y": int,
+                        }
+            create_dictionary = cls.create(**dictionary)
+            empty_list.append(create_dictionary)
+        return empty_list
