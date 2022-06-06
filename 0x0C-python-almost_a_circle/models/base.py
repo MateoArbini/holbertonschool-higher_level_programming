@@ -21,6 +21,7 @@ Write the first class Base:
     to avoid duplicating the same code (by extension, same bugs).
 '''
 
+import csv
 from os import path
 import json
 
@@ -93,4 +94,4 @@ class Base:
             elements = cls.from_json_string(f.read())
             for element in elements:
                 instances.append(cls.create(**element))
-        return instances 
+        return instances
