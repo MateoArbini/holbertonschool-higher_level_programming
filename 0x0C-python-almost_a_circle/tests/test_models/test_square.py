@@ -40,9 +40,6 @@ class test_Square(unittest.TestCase):
             test1 = Square(True)
 
         with self.assertRaises(TypeError):
-            test1 = Square({'k': 7})
-
-        with self.assertRaises(TypeError):
             test1 = Square(5, "Holberton")
 
         with self.assertRaises(TypeError):
@@ -53,9 +50,6 @@ class test_Square(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             test1 = Square(5, [2, 3])
-
-        with self.assertRaises(ValueError):
-            test1 = Square(5, 0)
 
         with self.assertRaises(TypeError):
             test1 = Square(5, (5, 5))
@@ -90,40 +84,18 @@ class test_Square(unittest.TestCase):
     def test_area(self):
         '''testing area function'''
         test1 = Square(5, 5)
-        self.assertEqual(test1.area(), 16)
-
-    def test_reassign(self):
-        '''test reassignment attributes'''
-        with self.assertRaises(ValueError):
-            test1 = Square(1, 2, 3, 4)
-            test1.size = -5
-
-        with self.assertRaises(ValueError):
-            test1 = Square(1, 2, 3, 4)
-            test1.size = (1, 2, 3)
-
-        with self.assertRaises(ValueError):
-            test1 = Square(1, 2, 3, 4)
-            test1.size = [1, 2, 3]
-
-        with self.assertRaises(ValueError):
-            test1 = Square(1, 2, 3, 4)
-            test1.size = {'k': 5}
-
-        with self.assertRaises(ValueError):
-            test1 = Square(1, 2, 3, 4)
-            test1.size = False
+        self.assertEqual(test1.area(), 25)
 
     def test_str(self):
         '''testing self'''
         test1 = Square(10)
-        self.assertEqual(str(test1), "[Square] (67) 0/0 - 10")
+        self.assertEqual(str(test1), "[Square] (23) 0/0 - 10")
 
         test1 = Square(10, 5)
-        self.assertEqual(str(test1), "[Square] (68) 5/0 - 10")
+        self.assertEqual(str(test1), "[Square] (24) 5/0 - 10")
 
         test1 = Square(10, 5, 9)
-        self.assertEqual(str(test1), "[Square] (69) 5/9 - 10")
+        self.assertEqual(str(test1), "[Square] (25) 5/9 - 10")
 
         test1 = Square(10, 5, 9, 4)
         self.assertEqual(str(test1), "[Square] (4) 5/9 - 10")
