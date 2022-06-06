@@ -77,9 +77,9 @@ class Base:
         elif new_instance == "Rectangle":
             attr = cls(10, 12)
         attr.update(**dictionary)
-        attributes = attr
+        attr
 
-        return attributes
+        return attr
 
     @classmethod
     def load_from_file(cls):
