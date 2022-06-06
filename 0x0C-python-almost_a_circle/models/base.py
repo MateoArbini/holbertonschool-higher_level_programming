@@ -91,6 +91,6 @@ class Base:
                 elements = cls.from_json_string(f.read())
                 for element in elements:
                     instances.append(cls.create(**element))
-        else:
-            return instances
+        except Exception:
+            return pass
         return instances
