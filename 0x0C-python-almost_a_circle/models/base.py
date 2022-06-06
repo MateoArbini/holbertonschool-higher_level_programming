@@ -77,8 +77,6 @@ class Base:
         elif new_instance == "Rectangle":
             attr = cls(10, 12)
         attr.update(**dictionary)
-        attr
-
         return attr
 
     @classmethod
@@ -86,11 +84,14 @@ class Base:
         '''returns a list of instances'''
         filename = f"{cls.__name__}.json"
         instances = []
-        try:
-            with open(filename, "r", encoding="UTF-8") as f:
-                elements = cls.from_json_string(f.read())
-                for element in elements:
-                    instances.append(cls.create(**element))
-        except Exception:
-            return pass
+
+        if path.exists(filename) is False:
+            return instances
+
+        with open(filename, "r", encoding="UTF-8") as f:
+            elements = cls.from_json_string(f.read())
+            
+        for element in elements:
+                instances.append(cls.create(**element))
+        
         return instances
