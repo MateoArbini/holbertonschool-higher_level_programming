@@ -67,7 +67,7 @@ class Base:
             return "([])"
         else:
             a = json.loads(json_string)
-            return a
+            return (a)
 
     @classmethod
     def create(cls, **dictionary):
