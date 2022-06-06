@@ -86,12 +86,12 @@ class Base:
         '''returns a list of instances'''
         filename = f"{cls.__name__}.json"
         instances = []
-
-        with open(filename, "r", encoding="UTF-8") as f:
-            if os.path.isfile(filename) is False:
-                return instances
-            else:
+    
+        try:
+            with open(filename, "r", encoding="UTF-8") as f:
                 elements = cls.from_json_string(f.read())
                 for element in elements:
                     instances.append(cls.create(**element))
+        else:
+            return instances
         return instances
