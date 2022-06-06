@@ -85,13 +85,10 @@ class Base:
         filename = f"{cls.__name__}.json"
         instances = []
 
-        if path.exists(filename) is False:
+        if os.path.exists(filename) is False:
             return instances
-
         with open(filename, "r", encoding="UTF-8") as f:
             elements = cls.from_json_string(f.read())
-            
         for element in elements:
                 instances.append(cls.create(**element))
-        
         return instances
