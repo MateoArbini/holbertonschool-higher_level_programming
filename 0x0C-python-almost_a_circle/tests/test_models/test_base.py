@@ -16,6 +16,7 @@ class test_Base(unittest.TestCase):
 
     def test_id(self):
         '''testeamos seteo de id'''
+        Base._Base__nb_objects = 0
         test1 = Base()
         test2 = Base()
         test3 = Base(3)
@@ -65,6 +66,3 @@ class test_Base(unittest.TestCase):
         with self.assertRaises(AttributeError):
             Base.save_to_string()
         '''en este caso, testeamos el error'''
-
-    if __name__ == "__main__":
-        unittest.main()

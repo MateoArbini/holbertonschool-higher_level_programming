@@ -16,6 +16,7 @@ class test_Rectangle(unittest.TestCase):
     '''class'''
     def test_id(self):
         '''testeamos id'''
+        Base._Base__nb_objects = 0
         test2 = Rectangle(784, 422, 45, 65, 5)
         self.assertEqual(test2.id, 5)
 
@@ -122,7 +123,3 @@ class test_Rectangle(unittest.TestCase):
 
         test1.update()
         self.assertEqual(str(test1), "[Rectangle] (1) 1/1 - 1/1")
-
-
-if __name__ == "__main__":
-    unittest.main()
