@@ -86,7 +86,6 @@ class Base:
         '''returns a list of instances'''
         filename = f"{cls.__name__}.json"
         instances = []
-    
         try:
             with open(filename, "r", encoding="UTF-8") as f:
                 elements = cls.from_json_string(f.read())
