@@ -71,10 +71,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         '''return an instance with all attributes already set'''
-        new_instance = cls.__name__
-        if new_instance == "Square":
+        if cls.__name__ == "Square":
             attr = cls(10)
-        elif new_instance == "Rectangle":
+        elif cls.__name__ == "Rectangle":
             attr = cls(10, 12)
         attr.update(**dictionary)
         return attr
@@ -85,10 +84,11 @@ class Base:
         filename = f"{cls.__name__}.json"
         instances = []
 
-        if os.path.exists(filename) is False:
+        if path.exists(filename) is False:
             return instances
-        with open(filename, "r", encoding="UTF-8") as f:
-            elements = cls.from_json_string(f.read())
-        for element in elements:
-                instances.append(cls.create(**element))
-        return instances
+        else:
+            with open(filename, "r", encoding="UTF-8") as f:
+                elements = cls.from_json_string(f.read())
+                for element in elements:
+                    instances.append(cls.create(**element))
+            return instances
