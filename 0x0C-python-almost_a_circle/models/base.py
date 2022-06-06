@@ -21,7 +21,7 @@ Write the first class Base:
     to avoid duplicating the same code (by extension, same bugs).
 '''
 
-import os
+from os import path
 import json
 
 
