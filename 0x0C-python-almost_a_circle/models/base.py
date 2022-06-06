@@ -21,8 +21,7 @@ Write the first class Base:
     to avoid duplicating the same code (by extension, same bugs).
 '''
 
-import csv
-from os import path
+import os
 import json
 
 
@@ -78,8 +77,9 @@ class Base:
         elif new_instance == "Rectangle":
             attr = cls(10, 12)
         attr.update(**dictionary)
+        attributes = attr
 
-        return attr
+        return attributes
 
     @classmethod
     def load_from_file(cls):
@@ -88,9 +88,10 @@ class Base:
         instances = []
 
         with open(filename, "r", encoding="UTF-8") as f:
-            if path.exists(filename) is False:
+            if os.path.isfile(filename) is False:
                 return instances
-            elements = cls.from_json_string(f.read())
-            for element in elements:
-                instances.append(cls.create(**element))
+            else:
+                elements = cls.from_json_string(f.read())
+                for element in elements:
+                    instances.append(cls.create(**element))
         return instances
