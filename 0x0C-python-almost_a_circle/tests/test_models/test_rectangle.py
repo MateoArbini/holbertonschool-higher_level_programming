@@ -12,7 +12,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestRectangle(unittest.TestCase):
+class test_Rectangle(unittest.TestCase):
     '''class'''
     def test_id(self):
         '''testeamos id'''

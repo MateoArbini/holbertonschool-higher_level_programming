@@ -11,7 +11,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestSquare(unittest.TestCase):
+class test_Square(unittest.TestCase):
     '''class'''
     def test_square_attributes(self):
         '''testing attributes'''
