@@ -2,5 +2,5 @@
 -- the description must be, id - INT and name - VARCHAR(256). Show or select
 -- are not allowed to use
 CREATE TABLE IF NOT EXISTS first_table (
-	id INT
+	id INT,
 	name VARCHAR(256));
