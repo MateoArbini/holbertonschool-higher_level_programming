@@ -5,6 +5,6 @@
 SELECT cities
 FROM hbtn_0d_usa
 WHERE cities.id (
-	SELECT cities
+	SELECT states
 	FROM hbtn_0d_usa
 	WHERE name = "California");
