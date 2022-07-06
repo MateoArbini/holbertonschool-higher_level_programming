@@ -3,7 +3,7 @@
 -- name = California (but the id can be different, as per the example) Results
 -- must be sorted in ascending order by cities.id Join not allowed.
 SELECT id, name
-FROM hbtn_0d_usa
+FROM cities
 WHERE state_id = (
 	SELECT id
 	FROM states
