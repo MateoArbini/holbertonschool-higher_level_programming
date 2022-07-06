@@ -4,7 +4,7 @@
 -- must be sorted in ascending order by cities.id Join not allowed.
 SELECT cities
 FROM hbtn_0d_usa
-WHERE cities.id (
-	SELECT states
-	FROM hbtn_0d_usa
+WHERE cities.id = (
+	SELECT state.id
+	FROM states
 	WHERE name = "California");
