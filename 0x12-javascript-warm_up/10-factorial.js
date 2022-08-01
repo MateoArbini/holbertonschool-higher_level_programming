@@ -5,15 +5,7 @@
 const n = process.argv[2];
 
 function factorial (n) {
-  let result = n;
-
-  if (!n) { return 1; }
-  if (n === 0 || n === 1) { return 1; }
-  while (n > 1) {
-    n--;
-    result *= n;
-  }
-  return result;
+  if (!n || n === 0) { return 1; } else { return factorial(n - 1) * n; }
 }
 
 console.log(factorial(n));
