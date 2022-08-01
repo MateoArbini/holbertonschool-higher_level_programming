@@ -5,12 +5,25 @@
 const lista = [];
 let x = 2;
 
-if (!process.argv[2] || process.argv[2] === '1' || process.argv[2] === '0') {
-  console.log('0');
-} else {
-  for (x; x < process.argv.length; x++) {
-    lista.push(process.argv[x]);
-  }
-  lista.sort();
-  console.log(lista[lista.length - 2]);
+for (x; x < process.argv.length; x++) 
+{
+	lista.push(process.argv[x]);
+}
+lista.sort();
+
+if (lista.length === 0)
+{
+	console.log('0');
+}
+else if (lista.length === 1 && lista[0] == 0)
+{
+	console.log('0');
+}
+else if (lista.length === 1 && lista[0] == 1)
+{
+	console.log('0');
+}
+else
+{
+	console.log(lista[lista.length - 2]);
 }
