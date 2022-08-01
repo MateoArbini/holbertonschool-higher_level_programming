@@ -2,7 +2,7 @@
 
 /* script that searches the second biggest integer in the list of arguments */
 
-const lista = [];
+let lista = [];
 let unicos = [];
 let x = 2;
 
