@@ -5,7 +5,7 @@
 const lista = [];
 let x = 2;
 
-if (!process.argv[2] || process.argv[2] == 1 || process.argv[2] == 0) {
+if (!process.argv[2] || process.argv[2] === 1 || process.argv[2] === 0) {
   console.log('0');
 } else {
   for (x; x < process.argv.length; x++) {
