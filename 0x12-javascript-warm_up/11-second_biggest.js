@@ -10,7 +10,7 @@ for (x; x < process.argv.length; x++) {
   lista.push(process.argv[x]);
 }
 lista.sort();
-unicos = [... new Set(lista)];
+unicos = [...new Set(lista)];
 
 if (unicos.length === 1 || !process.argv[2]) {
   console.log('0');
