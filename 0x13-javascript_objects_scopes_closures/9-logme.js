@@ -5,6 +5,6 @@
 const log = [];
 
 exports.logMe = function (item) {
-	log.push(item);
-	console.log(log.length - 1 + ":" + " " + item);
+  log.push(item);
+  console.log(log.length - 1 + ':' + ' ' + item);
 };
