@@ -4,7 +4,9 @@
 
 const data = require('./100-data');
 
-const copy = data.list;
+let x = 0;
+const new_list = [];
 console.log(data.list);
-const map1 = data.list.map(x => x * (x - 1));
+const map1 = data.list.map(x => x * (x - 1)); {
+	new_list.push(data.list[x]); }
 console.log(map1);
