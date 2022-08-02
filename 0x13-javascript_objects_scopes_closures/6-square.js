@@ -13,13 +13,13 @@ class Square extends Rectangle {
 		let x = 0;
 		if (c === undefined)
 		{
-			for (x; x < this.size; x++)
-				console.log('X'.repeat(this.size));
+			for (x; x < this.width; x++)
+				console.log('X'.repeat(this.height));
 		}
 		else
 		{
-			for (x; x < this.size; x++)
-				console.log('C'.repeat(this.size));
+			for (x; x < this.width; x++)
+				console.log('C'.repeat(this.height));
 		}
 	}
 }
