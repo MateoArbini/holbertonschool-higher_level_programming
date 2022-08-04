@@ -19,5 +19,5 @@ if __name__ == "__main__":
             print(row)
         cur.close()
         conn.close()
-    except Excepctions:
+    except (Excepction) as error:
         print("Error with connection to DB")
