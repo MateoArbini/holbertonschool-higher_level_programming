@@ -14,3 +14,7 @@ class State(Base):
 
     id = Column('id', Integer, nullable=False, primary_key=True)
     name = Column('name', String(128), nullable=False)
+
+    def __str__(self):
+        '''method to show database elements'''
+        return (f"{self.id}: {self.name}")
