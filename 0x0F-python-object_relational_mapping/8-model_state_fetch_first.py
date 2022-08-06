@@ -23,7 +23,7 @@ if __name__ == "__main__":
     first = session.query(State).filter(State.id == 1).all()
     if len(first) > 0:
         for i in first:
-            print(i)
+            print("{}: {}".format(i.id, i.name))
     else:
-        print("Nothing")
+        print()
     session.close()
