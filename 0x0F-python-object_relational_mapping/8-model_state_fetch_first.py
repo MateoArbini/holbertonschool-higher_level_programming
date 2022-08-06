@@ -3,8 +3,6 @@
 '''class'''
 
 from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -16,12 +14,9 @@ if __name__ == "__main__":
     Session = sessionmaker()
 
     session = Session(bind=engine)
-    cont = 0
-    for state in session.query(State).order_by(State.id).all():
-        cont += 1
-        if cont <= 1:
-            print("{}: {}".format(state.id, state.name))
-        if cont == 0:
-            print()
-            break
+    first = session.query(State).order_by(State.id).first()
+    if first:
+        print("{}: {}".format(first.id, first.name))
+    else:
+        print("Nothing")
     session.close()
