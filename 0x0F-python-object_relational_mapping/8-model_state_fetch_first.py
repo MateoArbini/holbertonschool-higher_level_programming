@@ -10,7 +10,6 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-
     u = sys.argv[1]
     s = sys.argv[2]
     d = sys.argv[3]
@@ -18,9 +17,9 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         u, s, d), pool_pre_ping=True)
     Base.metadata.create_all(engine)
+    Session = sessionmaker()
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(bind=engine)
     first = session.query(State).filter(State.id == 1).all()
     if len(first) > 0:
         for i in first:
