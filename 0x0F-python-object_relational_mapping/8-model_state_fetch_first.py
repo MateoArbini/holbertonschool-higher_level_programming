@@ -10,18 +10,16 @@ from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    u = sys.argv[1]
-    s = sys.argv[2]
-    d = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        u, s, d), pool_pre_ping=True)
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker()
 
     session = Session(bind=engine)
+    cont = 0
     for state in session.query(State).filter(State.id == 1).all()
         cont += 1
-        if cont > 0:
+        if cont <= 1:
             print("{}: {}".format(i.id, i.name))
         else:
             print()
