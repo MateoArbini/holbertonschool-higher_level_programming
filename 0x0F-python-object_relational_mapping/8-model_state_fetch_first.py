@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
     cont = 0
-    for state in session.query(State).filter(State.id == 1).all()
+    for state in session.query(State).filter(State.id == 1).all():
         cont += 1
         if cont <= 1:
             print("{}: {}".format(i.id, i.name))
