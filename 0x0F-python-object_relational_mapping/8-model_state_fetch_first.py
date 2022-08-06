@@ -17,11 +17,11 @@ if __name__ == "__main__":
 
     session = Session(bind=engine)
     cont = 0
-    for state in session.query(State).filter(State.id == 1).all():
+    for state in session.query(State).order_by(State.id).all():
         cont += 1
         if cont <= 1:
-            print("{}: {}".format(i.id, i.name))
-        else:
+            print("{}: {}".format(state.id, state.name))
+        if cont == 0:
             print()
             break
     session.close()
