@@ -11,15 +11,15 @@ if __name__ == "__main__":
     user = argv[2]
     cont = 0
 
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, user)
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(user, repo)
 
     res = requests.get(url)
     json = res.json()
 
     for commit in json:
         if cont < 10:
-            print("{}: {}".format(commit['sha'], commit['commit']
-                                  ['author']['name']))
+            print(commit.get('sha'), end=': ')
+            print(commit.get('commit').get('author').get('user'))
             cont += 1
         else:
             break
