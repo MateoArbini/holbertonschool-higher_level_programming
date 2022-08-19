@@ -12,4 +12,4 @@ if __name__ == "__main__":
     url = argv[1]
 
     resp = req.head(url)
-    print(resp.headers.get['X-Request-Id'])
+    print(resp.headers.get('X-Request-Id'))
