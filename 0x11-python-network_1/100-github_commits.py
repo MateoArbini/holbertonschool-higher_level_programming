@@ -4,7 +4,7 @@ Write a Python script that takes 2 arguments
 in order to solve this challenge.
 """
 
-if name == "main":
+if __name__ == "__main__":
     import requests
     from sys import argv
 
