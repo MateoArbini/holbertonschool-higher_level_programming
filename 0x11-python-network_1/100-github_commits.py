@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Write a Python script that takes 2 arguments
-in order to solve this challenge.
+advanced task 100, limitate the petition request to 10 of the commits
 """
 
 if __name__ == "__main__":
@@ -10,15 +9,17 @@ if __name__ == "__main__":
 
     repo = argv[1]
     user = argv[2]
+    cont = 0
 
-    url = 'https://api.github.com/repos/%7B%7D/%7B%7D/commits%27'.format(repo, user)
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, user)
 
     res = requests.get(url)
     json = res.json()
 
-    for idx, commit in enumerate(json):
-        if idx < 10:
-            print("{}: {}".format(commit.get('sha'),commit.get('commit')
-                                  .get('author').get('name')))
+    for commit in json:
+        if cont < 10:
+            print("{}: {}".format(commit['sha'], commit['commit']
+                                  ['author']['name']))
+            cont += 1
         else:
-            exit
+            break
