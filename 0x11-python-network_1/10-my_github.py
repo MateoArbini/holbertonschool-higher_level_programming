@@ -16,6 +16,6 @@ if __name__ == "__main__":
     api_url = "https://api.github.com/user"
     resp = requests.get(api_url, auth=(user, password))
     try:
-       print(resp.json()['id'])
+        print(resp.json()['id'])
     except Exception:
-       print(None)
+        print(None)
