@@ -17,4 +17,3 @@ axios.get(process.argv[2])
   .catch(error => {
     console.log(error.response.status);
   });
-
