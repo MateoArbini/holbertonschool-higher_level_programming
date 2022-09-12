@@ -10,17 +10,11 @@ Page: https://zetcode.com/javascript/axios/
 
 const axios = require('axios');
 
-async function makeRequest () {
-  const config = {
-    method: 'GET',
-    url: process.argv[2]
-  };
-  try {
-    const res = await axios(config);
-    console.log(res.status);
-  } catch (err) {
-    console.error(err.response.status);
-  }
-}
+axios.get(process.argv[2])
+  .then(response => {
+    console.log(response.status);
+  })
+  .catch(error => {
+    console.log(error.response.status);
+  });
 
-makeRequest();
