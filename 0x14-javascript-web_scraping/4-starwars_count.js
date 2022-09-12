@@ -14,13 +14,20 @@ const url = process.argv[2];
 
 axios.get(url)
   .then(response => {
-    let totalmovies = 0;
+    let totalmovies = 0; // var which is going to be returned
     const movies = response.data.results;
+    // var which contains the total amount of movies - 7
     for (const x in movies) {
+      // here we go through all movies
       const characters = movies[x].characters;
+      // here we save into a var, the chars of the movies we went through
       for (const j in characters) {
+        // we go through all chars we saved previosuly
         if (characters[j].includes('18')) {
+          // here we ask if in chars, theres the id 18, which is the one
+          // we are looking for
           totalmovies = totalmovies + 1;
+          // if it matches, we add 1 to the var that we are returning
           break;
         }
       }
