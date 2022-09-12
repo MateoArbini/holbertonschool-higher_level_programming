@@ -10,7 +10,7 @@ You must use the module axios
 */
 
 const axios = require('axios');
-const url = process.argv[2]
+const url = process.argv[2];
 
 axios.get(url)
   .then(response => {
