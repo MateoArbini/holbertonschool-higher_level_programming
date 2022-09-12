@@ -10,8 +10,9 @@ You must use the module axios
 */
 
 const axios = require('axios');
+const url = process.argv[2]
 
-axios.get('https://swapi-api.hbtn.io/api/films/')
+axios.get(url)
   .then(response => {
     let totalmovies = 0;
     const movies = response.data.results;
