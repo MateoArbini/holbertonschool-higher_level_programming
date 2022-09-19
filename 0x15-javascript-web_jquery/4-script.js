@@ -1,4 +1,4 @@
 const $ = window.$;
-$('DIV#red_header').on('click', function () {
-    if ( 'red' )
+$('DIV#toggle_header').on('click', function () {
+  $('header').toggleClass('red green');
 });
